@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: gfur5vrrl-python-gitops
+  description: This is GitOps manifest for gfur5vrrl-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=gfur5vrrl-python
+    backstage.io/kubernetes-id: gfur5vrrl-python 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: gfur5vrrl-python-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:gfur5vrrl-python
